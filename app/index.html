@@ -9,12 +9,16 @@
     <!-- endbuild -->
 
   </head>
-  <body ng-app="frontApp" ng-controller="graphCtrl">
+  <body ng-app="frontApp">
     <div class="header" >
         <div class="container" >
           <button class="graph" id="graph">Graph</button>
-            <div id="totalGraph">
+          <button class="graph" id="vulnQuantity">Impacted Hosts</button>
+            <div id="totalGraph" ng-controller="totalsCtrl">
               <canvas id="totalsGraph"></canvas>
+            </div>
+            <div id="vulnQuantityGraph" ng-controller="vulnQuantityCtrl">
+              <canvas id="vulnsQuantityGraph"></canvas>
             </div>
         </div>
     </div>
@@ -25,9 +29,7 @@
 
     <!-- build:js(.) scripts/vendor.js -->
     <!-- bower:js -->
-    <script src="bower_components/jquery/dist/jquery.js"></script>
     <script src="bower_components/angular/angular.js"></script>
-    <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
     <script src="bower_components/angular-animate/angular-animate.js"></script>
     <script src="bower_components/angular-cookies/angular-cookies.js"></script>
     <script src="bower_components/angular-resource/angular-resource.js"></script>
@@ -40,8 +42,10 @@
     <!-- build:js({.tmp,app}) scripts/scripts.js -->
     <script src="scripts/app.js"></script>
     <script src="scripts/controllers/graphs.js"></script>
+    <script src="https://code.jquery.com/jquery-2.2.0.min.js"></script>
     <script src="https://code.highcharts.com/highcharts.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/1.0.2/Chart.min.js"></script>
+    <script src="http://code.highcharts.com/modules/exporting.js"></script>
     <!-- endbuild -->
 </body>
 </html>
